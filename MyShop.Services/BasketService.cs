@@ -63,7 +63,7 @@ namespace MyShop.Services
             return basket;
         }
 
-        private void AddToBasket(HttpContextBase httpContext,string productId)
+        public void AddToBasket(HttpContextBase httpContext,string productId)
         {
             Basket basket = GetBasket(httpContext,true);
             BasketItem item = basket.BasketItems.FirstOrDefault(i => i.ProductId == productId);
@@ -145,9 +145,6 @@ namespace MyShop.Services
             }
         }
 
-        public void AddToBAsket(HttpContextBase httpContext, string productId)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
